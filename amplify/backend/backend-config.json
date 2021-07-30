@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "75shots64295521": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

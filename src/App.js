@@ -1,13 +1,15 @@
 import './App.css';
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        75 Shots
+    <div>
+      <header>
+        <h1>75 Shots</h1>
       </header>
+      <AmplifySignOut />
     </div>
   );
 }
 
-export default App;
+export default withAuthenticator(App);
