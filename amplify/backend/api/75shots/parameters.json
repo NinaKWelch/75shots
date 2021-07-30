@@ -1,5 +1,0 @@
-{
-  "AppSyncApiName": "75shots",
-  "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false
-}
