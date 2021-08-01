@@ -1,5 +1,12 @@
 {
-  "auth": {},
+  "auth": {
+    "75shotsdd87ba75": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  },
   "api": {},
   "storage": {}
 }

@@ -1,0 +1,60 @@
+// import Bootstrap overrides form custom.scss
+@import "custom";
+
+// design aide
+/** {
+    border: 1px solid red;
+}
+*/
+
+/**
+* General
+*/
+
+// add margin to prevent content
+// from going under top navigation
+.mt-72 {
+    margin-top: 72px;
+}
+
+// transparent-background
+.bg-scrim {
+    background-color: rgba(0,0,0,0.3);
+}
+
+// container for hidden content
+// to be shown on hover
+
+div.show-on-hover-content > div.bg-scrim {
+    margin: 0 0 87px;
+}
+
+.show-on-hover-container > div.show-on-hover-content {
+    display: none;
+}
+
+.show-on-hover-container:hover > div.show-on-hover-content {
+	display: block;
+}
+
+
+
+/**
+* Collection
+*/
+
+// remove padding form clickable card
+.card.btn {
+    padding: 0;
+    text-align: left;
+}
+
+.modal-full-screen {
+    min-width: 100%;
+    margin: 0;
+}
+
+a.carousel-control-prev,
+a.carousel-control-next {
+    width: 8%;
+}
