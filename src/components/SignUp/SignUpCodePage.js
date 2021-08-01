@@ -12,9 +12,9 @@ const signUpCodeSchema = Yup.object().shape({
 })
 
 const SignUpCodePage = ({ handleConfirm }) => {
-  const confirmSignUp = async credentials => {
+  const confirmSignUp = async (username, code) => {
     try {
-      await Auth.confirmSignUp(credentials)
+      await Auth.confirmSignUp(username, code)
     } catch(err) {
       console.log('error confirming sign up:', err.message)
     }
@@ -36,12 +36,7 @@ const SignUpCodePage = ({ handleConfirm }) => {
           }}
           validationSchema={signUpCodeSchema}
           onSubmit={(values) => {
-            const userCredentials = {
-              username: values.username,
-              code: values.code
-            }
-
-            confirmSignUp(userCredentials)
+            confirmSignUp(values.username, values.code)
             handleConfirm()
           }}
         >

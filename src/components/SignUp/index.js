@@ -10,6 +10,7 @@ const SignUp = () => {
     <Container className="mt-72">
       {confirm === false && <SignUpPage handleConfirm={() => setConfirm(true)} />}
       {confirm === true && <SignUpCodePage handleConfirm={() => setConfirm(false)} />}
+      <SignUpCodePage handleConfirm={() => setConfirm(false)} />
     </Container>
   )
 }
