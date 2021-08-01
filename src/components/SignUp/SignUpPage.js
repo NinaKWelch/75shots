@@ -19,7 +19,7 @@ const SignUpPage = ({ handleConfirm }) => {
     try {
       await Auth.signUp(user)
     } catch(err) {
-      console.log(err.message)
+      console.log('error signing up:', err.message)
     }
   }
 

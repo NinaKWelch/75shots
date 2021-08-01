@@ -16,13 +16,13 @@ const SignUpCodeForm = ({ touched, errors }) => {
       />
       <ErrorMessage name="username" component={FormErrorMessage} />
       <Field
-        name="authCode"
+        name="code"
         label="Confirmation Code"
-        touched={touched.authCode}
-        errors={errors.authCode}
+        touched={touched.code}
+        errors={errors.code}
         component={FormFieldText}
       />
-      <ErrorMessage name="name" component={FormErrorMessage} />
+      <ErrorMessage name="code" component={FormErrorMessage} />
       <div className="pt-3">
         <Button type="submit" variant="success" size="lg" className="w-100">
           Confirm Sign Up

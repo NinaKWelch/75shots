@@ -18,7 +18,7 @@ const SignIn = () => {
     try {
       await Auth.signIn(credentials)
     } catch(err) {
-      console.log(err.message)
+      console.log('error signing in:', err.message)
     }
   }
   

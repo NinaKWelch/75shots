@@ -8,7 +8,7 @@ import SignUpCodeForm from "./SignUpCodeForm"
 // Yup
 const signUpCodeSchema = Yup.object().shape({
   username: Yup.string().max(35, "Username is too long").required("Username is required"),
-  authCode: Yup.string().max(6, "Code is too long").required("Code is required"),
+  code: Yup.string().max(6, "Code is too long").required("Code is required"),
 })
 
 const SignUpCodePage = ({ handleConfirm }) => {
@@ -16,7 +16,7 @@ const SignUpCodePage = ({ handleConfirm }) => {
     try {
       await Auth.confirmSignUp(credentials)
     } catch(err) {
-      console.log(err.message)
+      console.log('error confirming sign up:', err.message)
     }
   }
 
@@ -32,13 +32,13 @@ const SignUpCodePage = ({ handleConfirm }) => {
         <Formik
           initialValues={{
             username: "",
-            authCode: "",
+            code: "",
           }}
           validationSchema={signUpCodeSchema}
           onSubmit={(values) => {
             const userCredentials = {
               username: values.username,
-              authCode: values.authCode
+              code: values.code
             }
 
             confirmSignUp(userCredentials)
