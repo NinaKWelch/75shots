@@ -1,6 +1,7 @@
 import Card from "react-bootstrap/Card"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
+import Badge from "react-bootstrap/Badge"
 import Button from "react-bootstrap/Button"
 
 const VideoListItem = ({ video }) => {
@@ -43,9 +44,11 @@ const VideoListItem = ({ video }) => {
               <Card.Text className="text-muted">{checkPrice()}</Card.Text>
               <Card.Text>
                 {video.categories.map((category, index) => (
-                  <span key={index} className="px-2">
-                    {category}
-                  </span>
+                  <>
+                    <Badge key={index} bg="secondary" pill>
+                      {category}
+                    </Badge>{" "}
+                  </>
                 ))}
               </Card.Text>
             </Col>

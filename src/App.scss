@@ -37,8 +37,6 @@ div.show-on-hover-content > div.bg-scrim {
 	display: block;
 }
 
-
-
 /**
 * Collection
 */
@@ -57,4 +55,34 @@ div.show-on-hover-content > div.bg-scrim {
 a.carousel-control-prev,
 a.carousel-control-next {
     width: 8%;
+}
+
+/**
+* Admin Dashboard
+*/
+
+.admin-select {
+    position: fixed;
+    top: 72;
+    z-index: 100;
+}
+
+.admin-sidebar,
+.admin-content {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 72px);
+}
+
+.admin-content {
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.admin-sidebar a.nav-link {
+    color: inherit;
+}
+
+.admin-sidebar a.nav-link:hover,
+.admin-sidebar a.nav-link.active {
+    color: green;
 }
