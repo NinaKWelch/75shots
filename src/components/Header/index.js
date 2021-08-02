@@ -1,9 +1,8 @@
-import React from "react"
 import { Link } from "react-router-dom"
 import Navbar from "react-bootstrap/Navbar"
 import HeaderNav from "./HeaderNav"
-import SignOutButton from "./SignOutButton"
-import SignInButton from "./SignInButton"
+import HeaderNavUser from "./HeaderNavUser"
+import HeaderNavSignIn from "./HeaderNavSignIn"
 
 const Header = ({ user }) => {
   return (
@@ -11,27 +10,10 @@ const Header = ({ user }) => {
       <Navbar.Brand as={Link} to="/">
         75SHOTS
       </Navbar.Brand>
-
       <Navbar.Toggle aria-controls="header-nav" />
-
       <Navbar.Collapse id="header-nav">
         <HeaderNav />
-        {user && (
-          <>
-            <Navbar.Text className="px-2">
-              {user.username}
-            </Navbar.Text>
-            <SignOutButton />
-          </>
-        )}
-        {!user && (
-          <>
-            <Navbar.Text className="px-2">
-              Not a member? <Link to="/signup">Sign Up</Link>{" "}
-            </Navbar.Text>
-            <SignInButton />
-          </>
-        )}
+        {user ? <HeaderNavUser user={user} /> : <HeaderNavSignIn />}
       </Navbar.Collapse>
     </Navbar>
   )

@@ -14,14 +14,14 @@ const signInSchema = Yup.object().shape({
 })
 
 const SignIn = () => {
-  const signIn = async credentials => {
+  const signIn = async (credentials) => {
     try {
       await Auth.signIn(credentials)
-    } catch(err) {
-      console.log('error signing in:', err.message)
+    } catch (err) {
+      console.log("error signing in:", err.message)
     }
   }
-  
+
   return (
     <>
       <Container className="mt-72">
@@ -40,7 +40,7 @@ const SignIn = () => {
           onSubmit={(values) => {
             const userCredentials = {
               username: values.username,
-              password: values.password
+              password: values.password,
             }
 
             signIn(userCredentials)

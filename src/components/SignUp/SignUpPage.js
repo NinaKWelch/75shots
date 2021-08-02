@@ -10,16 +10,16 @@ const signUpSchema = Yup.object().shape({
   username: Yup.string().max(35, "Username is too long").required("Username is required"),
   password: Yup.string().required("Password is required"),
   email: Yup.string()
-  .email("Must be a valid email address")
-  .required("Contact email is required"),
+    .email("Must be a valid email address")
+    .required("Contact email is required"),
 })
 
 const SignUpPage = ({ handleConfirm }) => {
   const signUp = async (user) => {
     try {
       await Auth.signUp(user)
-    } catch(err) {
-      console.log('error signing up:', err.message)
+    } catch (err) {
+      console.log("error signing up:", err.message)
     }
   }
 
@@ -42,7 +42,7 @@ const SignUpPage = ({ handleConfirm }) => {
           const newUser = {
             username: values.username,
             password: values.password,
-            attributes: { email: values.email }
+            attributes: { email: values.email },
           }
           signUp(newUser)
           handleConfirm()

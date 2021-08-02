@@ -15,8 +15,8 @@ const SignUpCodePage = ({ handleConfirm }) => {
   const confirmSignUp = async (username, code) => {
     try {
       await Auth.confirmSignUp(username, code)
-    } catch(err) {
-      console.log('error confirming sign up:', err.message)
+    } catch (err) {
+      console.log("error confirming sign up:", err.message)
     }
   }
 
@@ -25,9 +25,7 @@ const SignUpCodePage = ({ handleConfirm }) => {
       <Container className="mt-72">
         <div className="pt-4 text-center">
           <h3>Sign Up</h3>
-          <p>
-            Please check your email for the confirmation code.
-          </p>
+          <p>Please check your email for the confirmation code.</p>
         </div>
         <Formik
           initialValues={{
