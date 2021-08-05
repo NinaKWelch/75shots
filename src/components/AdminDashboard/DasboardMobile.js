@@ -1,11 +1,9 @@
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Form from "react-bootstrap/Form"
-import VideoPage from "./VideoPage"
-import StudentPage from "./StudentPage"
-import ClassPage from "./ClassPage"
+import DashboardPages from "./DashboardPages"
 
-const DasboardMobile = ({ value, handleSelect }) => (
+const DasboardMobile = ({ pages, value, handleSelect }) => (
   <Row className="position-relative">
     <Col xs={12} className="admin-select bg-white pt-1 pb-3">
       <Form.Select
@@ -14,15 +12,15 @@ const DasboardMobile = ({ value, handleSelect }) => (
         aria-label="Select page to view"
         size="lg"
       >
-        <option value="videos">Videos</option>
-        <option value="students">Students</option>
-        <option value="classes">Classes</option>
+        {pages.map((page) => (
+          <option key={page.id} value={page.value}>
+            {page.title}
+          </option>
+        ))}
       </Form.Select>
     </Col>
     <Col xs={12} className="mt-72">
-      {value === "videos" && <VideoPage />}
-      {value === "students" && <StudentPage />}
-      {value === "classes" && <ClassPage />}
+      <DashboardPages value={value} />
     </Col>
   </Row>
 )

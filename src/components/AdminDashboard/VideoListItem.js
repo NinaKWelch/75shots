@@ -32,7 +32,7 @@ const VideoListItem = ({ video }) => {
   }
 
   return (
-    <Card className="mb-2">
+    <Card as={Col} xs={12} className="mb-2">
       <Row>
         <Col xs={12} md={4}>
           <Card.Img src={video.imgUrl} alt="vido image" />

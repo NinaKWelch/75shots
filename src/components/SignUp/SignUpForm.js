@@ -1,44 +1,65 @@
-import { Field, ErrorMessage } from "formik"
+import { Formik, Form } from "formik"
+import * as Yup from "yup"
+import { Auth } from "aws-amplify"
+import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Button from "react-bootstrap/Button"
-import FormFieldText from "../FormFieldText"
-import FormFieldEmail from "../FormFieldEmail"
-import FormFieldPassword from "../FormFieldPassword"
-import FormErrorMessage from "../FormErrorMessage"
+import SignUpFormFields from "./SignUpFormFields"
 
-const SignUpForm = ({ touched, errors }) => {
+// Yup
+const signUpSchema = Yup.object().shape({
+  username: Yup.string().max(35, "Username is too long").required("Username is required"),
+  password: Yup.string().required("Password is required"),
+  email: Yup.string()
+    .email("Must be a valid email address")
+    .required("Contact email is required"),
+})
+
+const SignUpForm = ({ handleConfirm }) => {
+  const signUp = async (user) => {
+    try {
+      await Auth.signUp(user)
+    } catch (err) {
+      console.log("error signing up:", err.message)
+    }
+  }
+
   return (
-    <Col xs={12} md={{ span: 8, offset: 2 }} lg={{ span: 6, offset: 3 }}>
-      <Field
-        name="username"
-        label="Username"
-        touched={touched.username}
-        errors={errors.username}
-        component={FormFieldText}
-      />
-      <ErrorMessage name="username" component={FormErrorMessage} />
-      <Field
-        name="password"
-        label="Password"
-        touched={touched.password}
-        errors={errors.password}
-        component={FormFieldPassword}
-      />
-      <ErrorMessage name="password" component={FormErrorMessage} />
-      <Field
-        name="email"
-        label="Email"
-        touched={touched.email}
-        errors={errors.email}
-        component={FormFieldEmail}
-      />
-      <ErrorMessage name="email" component={FormErrorMessage} />
-      <div className="pt-3">
-        <Button type="submit" variant="success" size="lg" className="w-100">
-          Sign Up
-        </Button>
-      </div>
-    </Col>
+    <Formik
+      initialValues={{
+        username: "",
+        password: "",
+        email: "",
+      }}
+      validationSchema={signUpSchema}
+      onSubmit={(values) => {
+        const newUser = {
+          username: values.username,
+          password: values.password,
+          attributes: { email: values.email },
+        }
+        signUp(newUser)
+        handleConfirm()
+      }}
+    >
+      {({ touched, errors }) => (
+        <Form>
+          <Row>
+            <SignUpFormFields touched={touched} errors={errors} />
+            <Col
+              xs={12}
+              md={{ span: 8, offset: 2 }}
+              lg={{ span: 6, offset: 3 }}
+              className="pt-3"
+            >
+              <Button type="submit" variant="success" size="lg" className="w-100">
+                Sign Up
+              </Button>
+            </Col>
+          </Row>
+        </Form>
+      )}
+    </Formik>
   )
 }
 

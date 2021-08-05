@@ -1,14 +1,14 @@
-import Col from "react-bootstrap/Col"
+import Row from "react-bootstrap/Row"
 import VideoListItem from "./VideoListItem"
 
 const VideoList = ({ videos }) => {
   console.log("VIDEOS:", videos)
   return (
-    <Col xs={12}>
+    <Row>
       {videos.map((video) => (
         <VideoListItem key={video.id} video={video} />
       ))}
-    </Col>
+    </Row>
   )
 }
 
