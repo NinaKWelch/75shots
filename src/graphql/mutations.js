@@ -1,46 +1,46 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createNote = /* GraphQL */ `
-  mutation CreateNote(
-    $input: CreateNoteInput!
-    $condition: ModelNoteConditionInput
+export const createVideo = /* GraphQL */ `
+  mutation CreateVideo(
+    $input: CreateVideoInput!
+    $condition: ModelVideoConditionInput
   ) {
-    createNote(input: $input, condition: $condition) {
+    createVideo(input: $input, condition: $condition) {
       id
-      name
+      title
+      director
       description
-      image
       createdAt
       updatedAt
     }
   }
 `;
-export const updateNote = /* GraphQL */ `
-  mutation UpdateNote(
-    $input: UpdateNoteInput!
-    $condition: ModelNoteConditionInput
+export const updateVideo = /* GraphQL */ `
+  mutation UpdateVideo(
+    $input: UpdateVideoInput!
+    $condition: ModelVideoConditionInput
   ) {
-    updateNote(input: $input, condition: $condition) {
+    updateVideo(input: $input, condition: $condition) {
       id
-      name
+      title
+      director
       description
-      image
       createdAt
       updatedAt
     }
   }
 `;
-export const deleteNote = /* GraphQL */ `
-  mutation DeleteNote(
-    $input: DeleteNoteInput!
-    $condition: ModelNoteConditionInput
+export const deleteVideo = /* GraphQL */ `
+  mutation DeleteVideo(
+    $input: DeleteVideoInput!
+    $condition: ModelVideoConditionInput
   ) {
-    deleteNote(input: $input, condition: $condition) {
+    deleteVideo(input: $input, condition: $condition) {
       id
-      name
+      title
+      director
       description
-      image
       createdAt
       updatedAt
     }

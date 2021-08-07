@@ -35,7 +35,7 @@ const VideoListItem = ({ video }) => {
     <Card as={Col} xs={12} className="mb-2">
       <Row>
         <Col xs={12} md={4}>
-          <Card.Img src={video.imgUrl} alt="vido image" />
+          <Card.Img src={video.imgUrl} alt="video image" />
         </Col>
         <Card.Body as={Col} xs={12} md={8}>
           <Row className="align-items-center">
@@ -44,11 +44,11 @@ const VideoListItem = ({ video }) => {
               <Card.Text className="text-muted">{checkPrice()}</Card.Text>
               <Card.Text>
                 {video.categories.map((category, index) => (
-                  <>
-                    <Badge key={index} bg="secondary" pill>
+                  <span key={index}>
+                    <Badge bg="secondary" pill>
                       {category}
                     </Badge>{" "}
-                  </>
+                  </span>
                 ))}
               </Card.Text>
             </Col>

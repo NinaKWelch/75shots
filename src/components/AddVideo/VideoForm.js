@@ -8,17 +8,24 @@ import VideoFormFields from "./VideoFormFields"
 
 // Yup
 const videoSchema = Yup.object().shape({
-  title: Yup.string().max(50, "Title is too long").required("Title is required"),
-  author: Yup.string(),
-  description: Yup.string(),
-  length: Yup.number(),
-  price_buy: Yup.number(),
-  price_rent: Yup.number(),
-  imgUrl: Yup.string(),
   videoUrl: Yup.string(),
+  imgUrl: Yup.string(),
   posterUrl: Yup.string(),
-  categories: Yup.array().of(Yup.string()),
-  tags: Yup.array().of(Yup.string()),
+  title: Yup.string().max(50, "Title is too long").required("Title is required"),
+  director: Yup.string().required("Director is required"),
+  description: Yup.string().required("Description is required"),
+  country: Yup.string(),
+  language: Yup.string(),
+  contentType: Yup.string(),
+  length: Yup.number(),
+  categories: Yup.array().of(
+    Yup.object().shape({
+      label: Yup.string(),
+      value: Yup.boolean(),
+    })
+  ),
+  pricePerView: 0,
+  tags: Yup.string(),
   crew: Yup.array().of(
     Yup.object().shape({
       position: Yup.string(),
@@ -33,36 +40,53 @@ const videoSchema = Yup.object().shape({
   ),
 })
 
-const VideoForm = () => {
+const VideoForm = ({
+  /*countries,
+  languages,
+  contentTypes,
+  categories,*/
+  handleCreateVideo,
+}) => {
   return (
     <Formik
       initialValues={{
+        //videoUrl: "",
+        //imgUrl: "",
+        //posterUrl: "",
         title: "",
-        author: "",
+        director: "",
         description: "",
-        length: 0,
-        price_buy: 0,
-        price_rent: 0,
-        imgUrl: "",
-        videoUrl: "",
-        posterUrl: "",
-        categories: [],
-        tags: [],
-        crew: [],
-        cast: [],
+        //country: countries[0],
+        //language: languages[0],
+        //contentType: contentTypes[0],
+        //length: 0,
+        //categories: categories,
+        //pricePerView: 0,
+        //tags: "",
+        //crew: [{ position: "", name: "" }],
+        //cast: [{ role: "", name: "" }],
       }}
       validationSchema={videoSchema}
       onSubmit={(values) => {
-        // add on submit
+        const newVideo = {
+          title: values.title,
+          director: values.director,
+          description: values.description,
+        }
+        handleCreateVideo(newVideo)
       }}
     >
-      {({ touched, errors, setFieldValue }) => (
+      {({ values, touched, errors, setFieldValue }) => (
         <Form>
           <Row>
             <VideoFormFields
+              //countries={countries}
+              //languages={languages}
+              //contentTypes={contentTypes}
+              //values={values}
               touched={touched}
               errors={errors}
-              setFieldValue={setFieldValue}
+              //setFieldValue={setFieldValue}
             />
             <Col xs={12} md={{ span: 10, offset: 1 }} className="pt-3">
               <Row>

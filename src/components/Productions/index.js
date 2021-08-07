@@ -1,5 +1,32 @@
+import React, { useEffect, useState } from "react"
+// import query definition
+import { listVideos as ListVideos } from "../../graphql/queries"
+// imports form Amplify library
+import { API, graphqlOperation } from "aws-amplify"
+import Container from "react-bootstrap/Container"
+import ProductionList from "./ProductionList"
+
 const Productions = () => {
-  return <div>Productions</div>
+  const [videos, setVideos] = useState([])
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const videoData = await API.graphql(graphqlOperation(ListVideos))
+        console.log("videoData:", videoData)
+        setVideos(videoData.data.listVideos.items)
+      } catch (err) {
+        console.log("error fetching videos...", err.message)
+      }
+    }
+    getData()
+  }, [])
+
+  return (
+    <Container className="mt-72">
+      <ProductionList videos={videos} />
+    </Container>
+  )
 }
 
 export default Productions

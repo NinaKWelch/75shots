@@ -1,66 +1,26 @@
-//import React, { useState } from "react"
+import { Field } from "formik"
 import Form from "react-bootstrap/Form"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
+import FormFieldCheckbox from "../FormFieldCheckbox"
 
-const categories = [
-  {
-    id: 1,
-    label: "FREE",
-    value: "free",
-  },
-  {
-    id: 2,
-    label: "Education",
-    value: "education",
-  },
-  {
-    id: 3,
-    label: "Fundraiser",
-    value: "fundraiser",
-  },
-  {
-    id: 4,
-    label: "LGBTQ",
-    value: "lgbtq",
-  },
-]
-
-const VideoFormFieldsCategories = ({ field, label, touched, errors, setFieldValue }) => {
-  console.log("FIELD VALUE:", field.value)
-
-  const isSelected = (option) => field.value.includes(option)
-
-  const handleChange = (option) => {
-    console.log("OPTION", option)
-    if (isSelected(option)) {
-      const updatedSelection = field.value.filter((value) => value !== option)
-      console.log("REMOVE", updatedSelection)
-      setFieldValue("categories", updatedSelection)
-    } else {
-      const addToSelection = field.value.push(option)
-      console.log("ADD", addToSelection)
-      setFieldValue("categories", addToSelection)
-    }
-  }
-
+const VideoFormFieldsCategories = ({ label, values }) => {
   return (
     <Form.Group className="mb-1 pt-3">
-      <Form.Label>{label}</Form.Label>
-      <Form.Select
-        size="lg"
-        onChange={(e) => handleChange(e.target.value)}
-        isInvalid={touched && errors}
-        multiple
-      >
-        {categories.map((category) => (
-          <option
-            key={category.id}
-            value={category.value}
-            selected={isSelected(category.value)}
-          >
-            {category.label}
-          </option>
+      <Form.Label>{label}:</Form.Label>
+      <Row>
+        {values.categories.map((category, index) => (
+          <Col key={index} xs={12} sm={4} md={3}>
+            <Field
+              name={`categories.${index}.value`}
+              value={category.value}
+              id={category.label}
+              label={category.label}
+              component={FormFieldCheckbox}
+            />
+          </Col>
         ))}
-      </Form.Select>
+      </Row>
     </Form.Group>
   )
 }
