@@ -41,7 +41,7 @@ const FormNewsletterSignUp = () => {
       {({ touched, errors }) => (
         <Form>
           <Row>
-            <Col xs={9} md={6} lg={4}>
+            <Col xs={10}>
               <Field
                 name="email"
                 placeholder="Email"
@@ -51,8 +51,8 @@ const FormNewsletterSignUp = () => {
               />
               <ErrorMessage name="email" component={FormErrorMessage} />
             </Col>
-            <Col xs={3}>
-              <Button type="submit" variant="light" className="p-3">
+            <Col xs={2}>
+              <Button type="submit" variant="light" className="w-100 p-3">
                 <ArrowRight />
               </Button>
             </Col>
