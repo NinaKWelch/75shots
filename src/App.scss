@@ -38,7 +38,26 @@ div.show-on-hover-content > div.bg-scrim {
 }
 
 /**
-* Collection
+* Home Page
+*/
+
+.bg-mission {
+    //background-image: src("./media/Field.jpg");
+    background: #000;
+}
+
+.bg-mission-overlay {
+    background: #fff;
+    transform: skew(20deg);
+    padding-top: 130px;
+    padding-bottom: 130px;
+}
+
+.bg-mission-overlay-content {
+    transform: skew(-20deg);
+}
+/**
+* Productions Page
 */
 
 // remove padding form clickable card

@@ -11,6 +11,7 @@ export const createVideo = /* GraphQL */ `
       title
       director
       description
+      imgUrl
       createdAt
       updatedAt
     }
@@ -26,6 +27,7 @@ export const updateVideo = /* GraphQL */ `
       title
       director
       description
+      imgUrl
       createdAt
       updatedAt
     }
@@ -41,6 +43,7 @@ export const deleteVideo = /* GraphQL */ `
       title
       director
       description
+      imgUrl
       createdAt
       updatedAt
     }

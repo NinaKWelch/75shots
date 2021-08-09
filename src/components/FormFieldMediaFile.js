@@ -7,9 +7,7 @@ const FormFieldMediaFile = ({ name, label, touched, errors, setFieldValue }) => 
       type="file"
       size="lg"
       isInvalid={touched && errors}
-      onChange={(e) => {
-        setFieldValue(name, e.currentTarget.files[0])
-      }}
+      onChange={(e) => setFieldValue(name, e.target.files[0])}
     />
   </Form.Group>
 )

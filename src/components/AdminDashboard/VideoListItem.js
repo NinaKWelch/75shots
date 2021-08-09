@@ -1,35 +1,14 @@
 import Card from "react-bootstrap/Card"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-import Badge from "react-bootstrap/Badge"
+//import Badge from "react-bootstrap/Badge"
 import Button from "react-bootstrap/Button"
 
-const VideoListItem = ({ video }) => {
-  const dollarPrice = (num) => {
+const VideoListItem = ({ video, handleDeleteVideo }) => {
+  /*const dollarPrice = (num) => {
     const price = num / 100
     return "$" + price.toString()
-  }
-
-  const checkPrice = () => {
-    const buy = video.price_buy
-    const rent = video.price_rent
-
-    if (buy > 0 && rent > 0) {
-      return dollarPrice(rent) + " RENT / " + dollarPrice(buy) + " BUY"
-    }
-
-    if (buy > 0 && rent === 0) {
-      return dollarPrice(buy) + " BUY"
-    }
-
-    if (buy === 0 && rent > 0) {
-      return dollarPrice(rent) + " RENT"
-    }
-
-    if (buy === 0 && rent === 0) {
-      return "FREE"
-    }
-  }
+  }*/
 
   return (
     <Card as={Col} xs={12} className="mb-2">
@@ -41,7 +20,9 @@ const VideoListItem = ({ video }) => {
           <Row className="align-items-center">
             <Col xs={9}>
               <Card.Title>{video.title}</Card.Title>
-              <Card.Text className="text-muted">{checkPrice()}</Card.Text>
+              {/*<Card.Text className="text-muted">
+                {dollarPrice(video.pricePerView)}
+              </Card.Text>
               <Card.Text>
                 {video.categories.map((category, index) => (
                   <span key={index}>
@@ -50,11 +31,18 @@ const VideoListItem = ({ video }) => {
                     </Badge>{" "}
                   </span>
                 ))}
-              </Card.Text>
+              </Card.Text>*/}
             </Col>
             <Col xs={3}>
-              <Button variant="light" size="lg">
+              {/*<Button variant="light" size="lg">
                 Edit
+              </Button>*/}
+              <Button
+                variant="outline-danger"
+                size="lg"
+                onClick={() => handleDeleteVideo(video.id)}
+              >
+                Delete
               </Button>
             </Col>
           </Row>

@@ -25,5 +25,10 @@
       }
     }
   },
-  "storage": {}
+  "storage": {
+    "75ShotsStorage": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
+    }
+  }
 }

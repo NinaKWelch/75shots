@@ -9,7 +9,7 @@ import VideoFormFields from "./VideoFormFields"
 // Yup
 const videoSchema = Yup.object().shape({
   videoUrl: Yup.string(),
-  imgUrl: Yup.string(),
+  imgUrl: Yup.object(),
   posterUrl: Yup.string(),
   title: Yup.string().max(50, "Title is too long").required("Title is required"),
   director: Yup.string().required("Director is required"),
@@ -51,7 +51,7 @@ const VideoForm = ({
     <Formik
       initialValues={{
         //videoUrl: "",
-        //imgUrl: "",
+        imgUrl: "",
         //posterUrl: "",
         title: "",
         director: "",
@@ -86,7 +86,7 @@ const VideoForm = ({
               //values={values}
               touched={touched}
               errors={errors}
-              //setFieldValue={setFieldValue}
+              setFieldValue={setFieldValue}
             />
             <Col xs={12} md={{ span: 10, offset: 1 }} className="pt-3">
               <Row>

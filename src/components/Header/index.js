@@ -3,6 +3,7 @@ import Navbar from "react-bootstrap/Navbar"
 import HeaderNav from "./HeaderNav"
 import HeaderNavUser from "./HeaderNavUser"
 import HeaderNavSignIn from "./HeaderNavSignIn"
+import HeaderNavDonate from "./HeaderNavDonate"
 
 const Header = ({ user }) => {
   return (
@@ -11,8 +12,10 @@ const Header = ({ user }) => {
         75SHOTS
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="header-nav" />
+
       <Navbar.Collapse id="header-nav">
         <HeaderNav />
+        <HeaderNavDonate />
         {user ? <HeaderNavUser user={user} /> : <HeaderNavSignIn />}
       </Navbar.Collapse>
     </Navbar>

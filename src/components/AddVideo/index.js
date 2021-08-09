@@ -2,8 +2,8 @@ import React, { useEffect, useReducer } from "react"
 import { API, graphqlOperation } from "aws-amplify"
 //import uuid from "uuid/v4"
 import videoReducer from "../../reducers/videoReducer"
-import { createVideo as CreateVideo } from "../../graphql/mutations"
 import { listVideos as ListVideos } from "../../graphql/queries"
+import { createVideo as CreateVideo } from "../../graphql/mutations"
 import AddVideoPage from "./AddVideoPage"
 
 //const USER_ID = uuid()
@@ -27,27 +27,30 @@ const AddVideo = () => {
     getData()
   }, [dispatch])
 
+  const storeFile = async (file) => {
+    if (file) {
+      await Storage.input(file.name, file)
+      return file.name
+    }
+
+    return
+  }
+
   const createVideo = async (obj) => {
-    dispatch({ type: "CREATE_VIDEO", video: obj })
+    const newVideo = {
+      ...obj,
+      imgUrl: storeFile(obj.imgUrl),
+    }
+    dispatch({ type: "CREATE_VIDEO", video: newVideo })
 
     try {
       await API.graphql(graphqlOperation(CreateVideo, { input: obj }))
       console.log("video created!")
+      dispatch({ type: "CREATE_VIDEO", video: obj })
     } catch (err) {
       console.log("error creating video...", err.message)
     }
   }
-
-  /*const deleteVideo = async (obj) => {
-    dispatch({ type: "DELETE_VIDEO", video: obj })
-
-    try {
-
-    } catch (err) {
-      console.log("error createing video...", err.message)
-    }
-  }
-  */
 
   return (
     <div>

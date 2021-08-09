@@ -1,6 +1,6 @@
 {
     "identityPoolName": "75shotsdd87ba75_identitypool_dd87ba75",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "75shotdd87ba75",
     "userPoolName": "75shotsdd87ba75_userpool_dd87ba75",
     "autoVerifiedAttributes": [

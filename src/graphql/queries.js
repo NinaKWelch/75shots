@@ -8,6 +8,7 @@ export const getVideo = /* GraphQL */ `
       title
       director
       description
+      imgUrl
       createdAt
       updatedAt
     }
@@ -25,6 +26,7 @@ export const listVideos = /* GraphQL */ `
         title
         director
         description
+        imgUrl
         createdAt
         updatedAt
       }

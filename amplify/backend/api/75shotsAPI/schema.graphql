@@ -3,4 +3,5 @@ type Video @model {
   title: String!
   director: String!
   description: String!
+  imgUrl: String
 }

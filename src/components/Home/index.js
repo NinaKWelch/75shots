@@ -1,5 +1,14 @@
+import Container from "react-bootstrap/Container"
+import MissionSection from "./MissionSection"
+import AcademySection from "./AcademySection"
+
 const Home = () => {
-  return <div className="mt-72">Home</div>
+  return (
+    <Container fluid className="mt-72">
+      <MissionSection />
+      <AcademySection />
+    </Container>
+  )
 }
 
 export default Home

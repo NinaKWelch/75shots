@@ -20,7 +20,7 @@ const VideoFormFields = ({
   values,*/
   touched,
   errors,
-  //setFieldValue,
+  setFieldValue,
 }) => {
   return (
     <Col xs={12} md={{ span: 10, offset: 1 }}>
@@ -30,7 +30,7 @@ const VideoFormFields = ({
         touched={touched.videoUrl}
         errors={errors.videoUrl}
         component={FormFieldMediaFile}
-      />
+      />*/}
       <ErrorMessage name="videoUrl" component={FormErrorMessage} />
       <Field
         name="imgUrl"
@@ -38,7 +38,7 @@ const VideoFormFields = ({
         setFieldValue={setFieldValue}
         component={FormFieldImageFile}
       />
-      <ErrorMessage name="imgUrl" component={FormErrorMessage} />
+      {/*<ErrorMessage name="imgUrl" component={FormErrorMessage} />
       <Field
         name="posterUrl"
         label="Poster"
