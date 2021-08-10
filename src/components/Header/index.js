@@ -4,7 +4,7 @@ import Navbar from "react-bootstrap/Navbar"
 import HeaderNav from "./HeaderNav"
 import HeaderNavUser from "./HeaderNavUser"
 import HeaderNavSignIn from "./HeaderNavSignIn"
-import HeaderNavDonate from "./HeaderNavDonate"
+import DonateButton from "./DonateButton"
 
 const Header = ({ user }) => {
   return (
@@ -17,7 +17,7 @@ const Header = ({ user }) => {
 
         <Navbar.Collapse id="header-nav">
           <HeaderNav />
-          <HeaderNavDonate />
+          <DonateButton />
           {user ? <HeaderNavUser user={user} /> : <HeaderNavSignIn />}
         </Navbar.Collapse>
       </Navbar>
