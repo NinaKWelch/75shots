@@ -8,7 +8,7 @@ import Logo from "../Logo"
 
 const Footer = () => {
   return (
-    <Container fluid>
+    <Container as="footer" fluid="xl" className="align-self-end">
       <Row className="bg-secondary py-5">
         <Col
           xs={{ span: 10, offset: 1 }}

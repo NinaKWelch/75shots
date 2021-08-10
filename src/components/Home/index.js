@@ -4,7 +4,7 @@ import AcademySection from "./AcademySection"
 
 const Home = () => {
   return (
-    <Container fluid className="mt-72">
+    <Container as="main" fluid="xl" className="mt-72">
       <MissionSection />
       <AcademySection />
     </Container>

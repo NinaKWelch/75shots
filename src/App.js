@@ -5,6 +5,7 @@ import "./App.scss"
 import Row from "react-bootstrap/Row"
 import Header from "./components/Header"
 import AdminDashboard from "./components/AdminDashboard"
+import Donate from "./components/Donate"
 import Productions from "./components/Productions"
 import SignUp from "./components/SignUp"
 import SignIn from "./components/SignIn"
@@ -48,12 +49,15 @@ const App = () => {
 
   return (
     <Router>
-      <div className="vh-100">
+      <Row className="vh-100">
         <Header user={user} />
 
         <Switch>
           <Route path="/admin">
             <AdminDashboard />
+          </Route>
+          <Route path="/donate">
+            <Donate />
           </Route>
           <Route path="/productions">
             <Productions />
@@ -70,7 +74,7 @@ const App = () => {
         </Switch>
 
         <Footer />
-      </div>
+      </Row>
     </Router>
   )
 }

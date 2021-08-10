@@ -17,6 +17,12 @@
     margin-top: 72px;
 }
 
+// add margin to prevent page content
+// from going under top navigation
+.mt-100 {
+    margin-top: 100px;
+}
+
 // transparent-background
 .bg-scrim {
     background-color: rgba(0,0,0,0.3);
