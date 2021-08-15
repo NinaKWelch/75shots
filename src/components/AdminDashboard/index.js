@@ -1,44 +1,53 @@
-import React, { useState } from "react"
-import Container from "react-bootstrap/Container"
-import DasboardMobile from "./DasboardMobile"
-import DasboardWeb from "./DasboardWeb"
+import React, { useEffect, useReducer } from "react"
+import { getVideos, createVideo, deleteVideo } from "../../services/videos"
+import videoReducer from "../../reducers/videoReducer"
+import AdminMenu from "./AdminMenu"
+import AdminRoutes from "../Routes/AdminRoutes"
 
-const pages = [
-  {
-    id: 1,
-    title: "Add Video",
-    value: "add-video",
-  },
-  {
-    id: 2,
-    title: "Videos",
-    value: "videos",
-  },
-  {
-    id: 3,
-    title: "Students",
-    value: "students",
-  },
-  {
-    id: 4,
-    title: "Classes",
-    value: "classes",
-  },
-]
+const initialState = []
+
 const AdminDashboard = () => {
-  const [value, setValue] = useState("add-video")
+  const [state, dispatch] = useReducer(videoReducer, initialState)
 
-  const handleSelect = (option) => setValue(option)
+  useEffect(() => {
+    const getData = async () => {
+      const data = await getVideos()
+      if (data !== "error") {
+        dispatch({ type: "SET_VIDEOS", videos: data })
+      }
+    }
+
+    getData()
+  }, [dispatch])
+
+  const handleCreateVideo = async (data) => {
+    const response = await createVideo(data)
+    if (response !== "error") {
+      dispatch({ type: "CREATE_VIDEO", video: data })
+    }
+  }
+
+  const handleDeleteVideo = async (id) => {
+    const response = await deleteVideo(id)
+    if (response !== "error") {
+      dispatch({ type: "DELETE_VIDEO", videoId: id })
+    }
+  }
+
+  const handleUpdateVideo = () => {
+    //TODO
+  }
 
   return (
-    <Container fluid className="mt-72">
-      <div className="d-lg-none">
-        <DasboardMobile pages={pages} value={value} handleSelect={handleSelect} />
-      </div>
-      <div className="d-none d-lg-block">
-        <DasboardWeb pages={pages} value={value} handleSelect={handleSelect} />
-      </div>
-    </Container>
+    <div className="mt-72 position-relative">
+      <AdminMenu />
+      <AdminRoutes
+        videos={state}
+        handleCreateVideo={handleCreateVideo}
+        handleDeleteVideo={handleDeleteVideo}
+        handleUpdateVideo={handleUpdateVideo}
+      />
+    </div>
   )
 }
 

@@ -33,7 +33,7 @@ const DonatePageSection = ({
               className="mt-auto"
             >
               <Button
-                variant="warning"
+                variant="outline-primary"
                 size="lg"
                 className="w-100"
                 onClick={() => settleDonation(donationType)}

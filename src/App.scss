@@ -24,8 +24,14 @@
 }
 
 // transparent-background
+/*
 .bg-scrim {
     background-color: rgba(0,0,0,0.3);
+}
+*/
+
+.btn {
+    border-radius: 0;
 }
 
 // container for hidden content
@@ -48,20 +54,46 @@ div.show-on-hover-content > div.bg-scrim {
 */
 
 .bg-mission {
-    //background-image: src("./media/Field.jpg");
-    background: #000;
+    height: 375px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      no-repeat center/cover url("./media/banner.jpg");
 }
 
-.bg-mission-overlay {
-    background: #fff;
-    transform: skew(20deg);
-    padding-top: 130px;
-    padding-bottom: 130px;
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { 
+    .bg-mission {
+        height: 475px;
+    }
 }
 
-.bg-mission-overlay-content {
-    transform: skew(-20deg);
+// Medium devices (tablets, 768px and up)
+@media (min-width: 758px) { 
+    .bg-mission {
+        height: 450px;
+        background: no-repeat right/contain url("./media/banner.jpg");
+    }
+
+    .bg-mission-overlay {
+        background: #fff;
+        transform: skew(20deg);
+    }
+    
+    .bg-mission-overlay-content {
+        transform: skew(-20deg);
+    }
+ }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 932px) {
+    .bg-mission-overlay {
+        transform: skew(0deg);
+    }
+    
+    .bg-mission-overlay-content {
+        transform: skew(0deg);
+    }  
 }
+
 /**
 * Productions Page
 */
@@ -86,6 +118,15 @@ a.carousel-control-next {
 * Admin Dashboard
 */
 
+.admin-menu-container {
+    z-index: 900;
+}
+
+ul.admin-menu > li > a {
+    color: inherit;
+}
+
+/*
 .admin-select {
     position: fixed;
     top: 72;
@@ -101,7 +142,7 @@ a.carousel-control-next {
 
 .admin-content {
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-}
+/*}
 
 .admin-sidebar a.nav-link {
     color: inherit;
@@ -111,3 +152,4 @@ a.carousel-control-next {
 .admin-sidebar a.nav-link.active {
     color: green;
 }
+*/

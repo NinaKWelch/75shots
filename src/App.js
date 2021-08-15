@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from "react"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { BrowserRouter as Router } from "react-router-dom"
 import { Auth, Hub } from "aws-amplify"
 import "./App.scss"
 import Row from "react-bootstrap/Row"
 import Header from "./components/Header"
-import AdminDashboard from "./components/AdminDashboard"
-import Donate from "./components/Donate"
-import Productions from "./components/Productions"
-import SignUp from "./components/SignUp"
-import SignIn from "./components/SignIn"
-import Home from "./components/Home"
+import Routes from "./components/Routes"
 import Footer from "./components/Footer"
 
 const App = () => {
@@ -49,30 +44,9 @@ const App = () => {
 
   return (
     <Router>
-      <Row className="vh-100">
+      <Row className="vh-100 align-items-start">
         <Header user={user} />
-
-        <Switch>
-          <Route path="/admin">
-            <AdminDashboard />
-          </Route>
-          <Route path="/donate">
-            <Donate />
-          </Route>
-          <Route path="/productions">
-            <Productions />
-          </Route>
-          <Route path="/signup">
-            <SignUp />
-          </Route>
-          <Route path="/signin">
-            <SignIn />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-
+        <Routes user={user} />
         <Footer />
       </Row>
     </Router>
