@@ -62,14 +62,13 @@ div.show-on-hover-content > div.bg-scrim {
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) { 
     .bg-mission {
-        height: 475px;
+        height: 440px;
     }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 758px) { 
     .bg-mission {
-        height: 450px;
         background: no-repeat right/contain url("./media/banner.jpg");
     }
 
@@ -93,6 +92,26 @@ div.show-on-hover-content > div.bg-scrim {
         transform: skew(0deg);
     }  
 }
+
+/**
+* Page Template
+*/
+
+.bg-header-overlay {
+    background: rgba(0, 0, 0, 0.65);
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 758px) {
+    .bg-header-overlay {
+        transform: skew(20deg);
+    }
+    
+    .bg-header-overlay-content {
+        transform: skew(-20deg);
+    }
+}
+
 
 /**
 * Productions Page

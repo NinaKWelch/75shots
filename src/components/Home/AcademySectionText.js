@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
 import Button from "react-bootstrap/Button"
@@ -7,7 +8,7 @@ const AcademySectionText = () => (
     <Row>
       <Col xs={{ span: 8, offset: 2 }} className="pt-5">
         <h3 className="mb-5 fs-2 lh-1 text-uppercase">
-          <span className="fw-lighter">75 Shots Academy is the </span>
+          <span className="fw-lighter">Pocket Cinema is the </span>
           <span className="fw-bolder">...</span>
         </h3>
       </Col>
@@ -15,7 +16,13 @@ const AcademySectionText = () => (
         <Button variant="primary" size="lg" className="mr-1">
           Apply
         </Button>{" "}
-        <Button variant="outline-primary" size="lg" className="ml-1">
+        <Button
+          as={Link}
+          to="/pocket-cinema"
+          variant="outline-primary"
+          size="lg"
+          className="ml-1"
+        >
           Learn More
         </Button>
       </Col>

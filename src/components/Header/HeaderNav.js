@@ -7,6 +7,14 @@ const HeaderNav = () => (
       Home
     </Nav.Link>
 
+    <Nav.Link as={Link} to="/about">
+      About
+    </Nav.Link>
+
+    <Nav.Link as={Link} to="/pocket-cinema">
+      Pocket Cinema
+    </Nav.Link>
+
     <Nav.Link as={Link} to="/productions">
       Productions
     </Nav.Link>

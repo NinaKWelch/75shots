@@ -4,6 +4,8 @@ import Donate from "../Donate"
 import Productions from "../Productions"
 import SignUp from "../SignUp"
 import SignIn from "../SignIn"
+import Academy from "../Academy"
+import About from "../About"
 import Home from "../Home"
 
 const Routes = ({ user }) => (
@@ -22,6 +24,12 @@ const Routes = ({ user }) => (
     </Route>
     <Route path="/signin">
       <SignIn />
+    </Route>
+    <Route path="/pocket-cinema">
+      <Academy />
+    </Route>
+    <Route path="/about">
+      <About />
     </Route>
     <Route path="/">
       <Home />

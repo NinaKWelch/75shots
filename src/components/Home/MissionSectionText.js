@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import Col from "react-bootstrap/Col"
 import Button from "react-bootstrap/Button"
 
@@ -7,7 +8,12 @@ const MissionSectionText = ({ mobile }) => (
       <span className="fw-lighter">75 Shots is </span>
       <span className="fw-bolder">Shooting Down Hatered One Shot at a Time</span>
     </h2>
-    <Button variant={mobile === true ? "primary" : "outline-primary"} size="lg">
+    <Button
+      as={Link}
+      to="/about"
+      variant={mobile === true ? "primary" : "outline-primary"}
+      size="lg"
+    >
       Learn More
     </Button>
   </Col>
