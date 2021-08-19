@@ -83,7 +83,7 @@ div.show-on-hover-content > div.bg-scrim {
  }
 
 // Large devices (desktops, 992px and up)
-@media (min-width: 932px) {
+/*@media (min-width: 932px) {
     .bg-mission-overlay {
         transform: skew(0deg);
     }
@@ -91,7 +91,7 @@ div.show-on-hover-content > div.bg-scrim {
     .bg-mission-overlay-content {
         transform: skew(0deg);
     }  
-}
+}*/
 
 /**
 * Page Template
@@ -112,6 +112,18 @@ div.show-on-hover-content > div.bg-scrim {
     }
 }
 
+/**
+* Subpage Template
+*/
+
+.subpage-header {
+    padding-top: 140px;
+}
+
+.subpage-header-content {
+    margin-bottom: -50px;
+    padding: 75px 50px 50px;
+}
 
 /**
 * Productions Page

@@ -4,7 +4,8 @@ import Donate from "../Donate"
 import Productions from "../Productions"
 import SignUp from "../SignUp"
 import SignIn from "../SignIn"
-import Academy from "../Academy"
+import PocketCinema from "../PocketCinema"
+import Training from "../Training"
 import About from "../About"
 import Home from "../Home"
 
@@ -25,13 +26,16 @@ const Routes = ({ user }) => (
     <Route path="/signin">
       <SignIn />
     </Route>
-    <Route path="/pocket-cinema">
-      <Academy />
+    <Route exact path="/training/pocket-cinema">
+      <PocketCinema />
+    </Route>
+    <Route exact path="/training">
+      <Training />
     </Route>
     <Route path="/about">
       <About />
     </Route>
-    <Route path="/">
+    <Route exact path="/">
       <Home />
     </Route>
   </Switch>

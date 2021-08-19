@@ -1,47 +1,36 @@
+import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
-import TemplatePage from "../TemplatePage"
-import TemplatePageTeaser from "../TemplatePageTeaser"
-import TemplatePageIntro from "../TemplatePageIntro"
-import AcademyGraduates from "./AcademyGraduates"
-import AcademyAside from "./AcademyAside"
-import AcademyCourse from "./AcademyCourse"
+import Col from "react-bootstrap/Col"
 
-const Academy = () => {
+const PocketCinema = () => {
   return (
-    <TemplatePage
-      titleImage="https://res.cloudinary.com/pocketcinema/image/upload/v1629135980/20190809_200552_wtgdpw.jpg"
-      title="About Pocket Cinema"
-      subTitleBold="In you pocket"
-      subTitle="lies a powerful tool, which can change the world"
-    >
-      <Row>
-        <TemplatePageTeaser boldText="Learn" plainText="to shoot like an artist" />
-        <TemplatePageIntro title="Our Purpose">
-          <p>
-            Pocket Cinema is for students with no previous experience, who want to train
-            their eyes to see more creatively and apply their knowledge to creating videos
-            to tell their stories, document their work, promote their business and express
-            their ideas.
-          </p>
-          <p>To participate to the training you will need the following:</p>
-          <ol>
-            <li>Smartphone Android or iPhone</li>
-            <li>Earphone with microphone</li>
-            <li>Access to WI-FI</li>
-            <li>
-              Selfie stick or tripod, lens, lights,external hardrive, computer (optional)
-            </li>
-          </ol>
-        </TemplatePageIntro>
+    <Container>
+      <Row className="bg-primary subpage-header">
+        <Col
+          xs={12}
+          md={{ span: 6, offset: 5 }}
+          className="bg-white subpage-header-content"
+        >
+          <figure className="text-start">
+            <blockquote className="pb-3 blockquote">
+              <p className="fs-2 lh-1 fw-bolder text-secondary">
+                "Karin and 75 Shots is the thing that reminds me that I have a dream, that
+                I deserve to be happy, that I can make things happen."
+              </p>
+            </blockquote>
+            <figcaption className="text-end fs-4 fw-bold text-secondary">
+              <cite title="Source Title">Khaled, 75 Shots Graduate</cite>
+            </figcaption>
+          </figure>
+        </Col>
       </Row>
-      <AcademyGraduates />
-      <AcademyAside />
-      <AcademyCourse />
-    </TemplatePage>
+      <Row className="bg-dark p-5"></Row>
+      <Row className="bg-dark p-5"></Row>
+    </Container>
   )
 }
 
-export default Academy
+export default PocketCinema
 
 /*
     <p>

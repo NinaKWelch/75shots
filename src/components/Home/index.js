@@ -1,14 +1,14 @@
 import Container from "react-bootstrap/Container"
 import MissionSection from "./MissionSection"
 import QuoteSection from "./QuoteSection"
-import AcademySection from "./AcademySection"
+import TrainingSection from "./TrainingSection"
 
 const Home = () => {
   return (
     <Container as="main" fluid="xl" className="mt-72">
       <MissionSection />
       <QuoteSection />
-      <AcademySection />
+      <TrainingSection />
     </Container>
   )
 }

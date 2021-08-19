@@ -4,7 +4,7 @@ import MissionSectionText from "./MissionSectionText"
 
 const MissionSectionWeb = () => (
   <Row className="bg-mission">
-    <Col xs={5} className="bg-mission-overlay">
+    <Col xs={5} md={6} lg="7" className="bg-mission-overlay">
       <Row className="h-100 align-items-center bg-mission-overlay-content">
         <MissionSectionText mobile={false} />
       </Row>

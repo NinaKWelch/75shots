@@ -1,10 +1,9 @@
-import { Link } from "react-router-dom"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Card from "react-bootstrap/Card"
-import AcademyGraduatesQuote from "./AcademyGraduatesQuote"
+import TrainingGraduatesQuote from "./TrainingGraduatesQuote"
 
-const AcademyGraduates = () => {
+const TrainingGraduates = () => {
   return (
     <Row className="bg-light">
       <Col xs={{ span: 10, offset: 1 }} className="py-5">
@@ -85,9 +84,9 @@ const AcademyGraduates = () => {
           </Col>
         </Row>
       </Col>
-      <AcademyGraduatesQuote />
+      <TrainingGraduatesQuote />
     </Row>
   )
 }
 
-export default AcademyGraduates
+export default TrainingGraduates

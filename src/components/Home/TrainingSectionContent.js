@@ -4,7 +4,7 @@ import Image from "react-bootstrap/Image"
 import Button from "react-bootstrap/Button"
 import { ArrowRight } from "react-bootstrap-icons"
 
-const AcademySectionCourse = () => {
+const TrainingSectionContent = () => {
   return (
     <Col xs={12} md={6} className="py-5">
       <Row className="align-items-center">
@@ -58,4 +58,4 @@ const AcademySectionCourse = () => {
   )
 }
 
-export default AcademySectionCourse
+export default TrainingSectionContent

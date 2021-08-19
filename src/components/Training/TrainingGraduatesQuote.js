@@ -2,7 +2,7 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Image from "react-bootstrap/Image"
 
-const AcademyGraduatesQuote = () => {
+const TrainingGraduatesQuote = () => {
   return (
     <Col xs={12} className="py-5">
       <Row className="align-items-center">
@@ -32,4 +32,4 @@ const AcademyGraduatesQuote = () => {
   )
 }
 
-export default AcademyGraduatesQuote
+export default TrainingGraduatesQuote

@@ -1,7 +1,7 @@
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 
-const AcademyAside = () => {
+const TrainingAside = () => {
   return (
     <Row className="py-5">
       <Col
@@ -17,4 +17,4 @@ const AcademyAside = () => {
   )
 }
 
-export default AcademyAside
+export default TrainingAside

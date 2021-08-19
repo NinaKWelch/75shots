@@ -11,8 +11,8 @@ const HeaderNav = () => (
       About
     </Nav.Link>
 
-    <Nav.Link as={Link} to="/pocket-cinema">
-      Pocket Cinema
+    <Nav.Link as={Link} to="/training">
+      Training
     </Nav.Link>
 
     <Nav.Link as={Link} to="/productions">
