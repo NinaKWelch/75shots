@@ -13,25 +13,14 @@ const TrainingSectionText = () => (
             weekly online smartphone film training to selected candidates
           </span>
         </h3>
-      </Col>
-      <Col xs={{ span: 10, offset: 1 }} sm={{ span: 8, offset: 2 }}>
         <Button
           as={Link}
-          to="/training/apply"
+          to="/training/pocket-cinema"
           variant="primary"
           size="lg"
           className="mr-1"
         >
-          Apply
-        </Button>{" "}
-        <Button
-          as={Link}
-          to="/training/pocket-cinema"
-          variant="outline-primary"
-          size="lg"
-          className="ml-1"
-        >
-          Learn More
+          Apply Today
         </Button>
       </Col>
     </Row>

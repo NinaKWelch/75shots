@@ -18,20 +18,29 @@ const Training = () => {
         <TemplatePageTeaser boldText="Learn" plainText="to shoot like an artist" />
         <TemplatePageIntro title="Our Purpose">
           <p>
-            Pocket Cinema is for students with no previous experience, who want to train
-            their eyes to see more creatively and apply their knowledge to creating videos
-            to tell their stories, document their work, promote their business and express
-            their ideas.
+            75 SHOTS exists to end human rights violations for marginalized communities
+            through the power of filmmaking.
           </p>
-          <p>To participate to the training you will need the following:</p>
-          <ol>
-            <li>Smartphone Android or iPhone</li>
-            <li>Earphone with microphone</li>
-            <li>Access to WI-FI</li>
+          <p>
+            75 SHOTS makes positive change happen around the issues of homophobia and
+            transphobia in anti-gay countries.
+          </p>
+          <ul>
+            <li>Provide basic smartphone filmmaking skills</li>
             <li>
-              Selfie stick or tripod, lens, lights,external hardrive, computer (optional)
+              Increase self-representation in film by empowering courageous individuals
             </li>
-          </ol>
+            <li>Give exposure, support and recognition to marginalized individuals</li>
+            <li>Create alternative storytelling platform</li>
+            <li>
+              Bring awareness of sexual and gender minorities in homophobic countries
+            </li>
+            <li>Create sustainable employability skills</li>
+            <li>
+              Influence LGBTQ+ advocates, supporters, decision-makers and activists to
+              push Legal Reforms
+            </li>
+          </ul>
         </TemplatePageIntro>
       </Row>
       <TrainingGraduates />
