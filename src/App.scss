@@ -11,6 +11,12 @@
 * General
 */
 
+/*
+// test in scaling images
+*, :after, :before {
+    box-sizing: inherit;
+}*/
+
 // add margin to prevent content
 // from going under top navigation
 .mt-72 {
@@ -30,8 +36,9 @@
 }
 */
 
-.btn {
-    border-radius: 0;
+.img-transition {
+    /*overflow: hidden;*/
+    transition: transform .9s cubic-bezier(.215,.61,.355,1);
 }
 
 // container for hidden content
@@ -47,6 +54,14 @@ div.show-on-hover-content > div.bg-scrim {
 
 .show-on-hover-container:hover > div.show-on-hover-content {
 	display: block;
+}
+
+/**
+* Footer
+*/
+
+.bg-footer {
+    background-color: #1b1b1b;
 }
 
 /**

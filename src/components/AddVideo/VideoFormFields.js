@@ -1,5 +1,5 @@
 import { Field, ErrorMessage } from "formik"
-//import Row from "react-bootstrap/Row"
+import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import FormErrorMessage from "../FormErrorMessage"
 //import FormFieldMediaFile from "../FormFieldMediaFile"
@@ -8,16 +8,16 @@ import FormFieldText from "../FormFieldText"
 import FormFieldTextArea from "../FormFieldTextArea"
 //import FormFieldSelect from "../FormFieldSelect"
 //import FormFieldTime from "../FormFieldTime"
-//import FormFieldPrice from "../FormFieldPrice"
-//import VideoFormFieldsCategories from "./VideoFormFieldsCategories"
+import FormFieldPrice from "../FormFieldPrice"
+import VideoFormFieldsCategories from "./VideoFormFieldsCategories"
 //import VideoFormFieldsCrew from "./VideoFormFieldsCrew"
 //import VideoFormFieldsCast from "./VideoFormFieldsCast"
 
 const VideoFormFields = ({
   /*countries,
   languages,
-  contentTypes,
-  values,*/
+  contentTypes,*/
+  values,
   touched,
   errors,
   setFieldValue,
@@ -112,7 +112,7 @@ const VideoFormFields = ({
           />
           <ErrorMessage name="length" component={FormErrorMessage} />
         </Col>
-      </Row>
+      </Row>*/}
       <VideoFormFieldsCategories label="Categories" values={values} />
       {values.categories[0].value === false ? (
         <Row>
@@ -128,7 +128,7 @@ const VideoFormFields = ({
           </Col>
         </Row>
       ) : null}
-      <Field
+      {/*<Field
         name="tags"
         label="Tags (separated with commas)"
         touched={touched.tags}

@@ -2,8 +2,8 @@ import { Link } from "react-router-dom"
 import Container from "react-bootstrap/Container"
 import Navbar from "react-bootstrap/Navbar"
 import HeaderNav from "./HeaderNav"
-import HeaderNavUser from "./HeaderNavUser"
-import HeaderNavSignIn from "./HeaderNavSignIn"
+//import HeaderNavUser from "./HeaderNavUser"
+//import HeaderNavSignIn from "./HeaderNavSignIn"
 import DonateButton from "./DonateButton"
 
 const Header = ({ user }) => {
@@ -18,7 +18,7 @@ const Header = ({ user }) => {
         <Navbar.Collapse id="header-nav">
           <HeaderNav />
           <DonateButton />
-          {user ? <HeaderNavUser user={user} /> : <HeaderNavSignIn />}
+          {/*user ? <HeaderNavUser user={user} /> : <HeaderNavSignIn />*/}
         </Navbar.Collapse>
       </Navbar>
     </Container>

@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button"
 const TrainingSectionText = () => (
   <Col xs={12} md={6}>
     <Row className="align-items-center">
-      <Col xs={{ span: 10, offset: 1 }} sm={{ span: 8, offset: 2 }}>
+      <Col xs={{ span: 10, offset: 1 }} md={{ span: 8, offset: 2 }}>
         <h3 className="mb-4 fs-2 lh-1 text-uppercase">
           <span className="fw-lighter">75 Shots offers </span>
           <span className="fw-bolder">
@@ -18,7 +18,7 @@ const TrainingSectionText = () => (
           to="/training/pocket-cinema"
           variant="primary"
           size="lg"
-          className="mr-1"
+          className="rounded-pill"
         >
           Apply Today
         </Button>

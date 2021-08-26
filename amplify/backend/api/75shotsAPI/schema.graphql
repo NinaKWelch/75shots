@@ -1,7 +1,0 @@
-type Video @model {
-  id: ID!
-  title: String!
-  director: String!
-  description: String!
-  imgUrl: String
-}

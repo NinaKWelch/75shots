@@ -1,9 +1,15 @@
+import React, { useEffect } from "react"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Button from "react-bootstrap/Button"
 
 const PocketCinema = () => {
+  // scroll to top of page
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const HeaderStyles = {
     height: 440,
     background:
@@ -12,7 +18,22 @@ const PocketCinema = () => {
 
   return (
     <Container className="mt-72">
-      <Row className="bg-dark" style={{ height: 600 }}></Row>
+      <Row className="bg-dark" style={{ height: 600 }}>
+        <Col xs={12}>
+          <video width="100%" height="auto" crossorigin>
+            <source
+              src="https://res.cloudinary.com/pocketcinema/video/upload/v1616865319/pass_the_hat_water_hu4kbj.mp4"
+              type="video/mp4"
+            />
+            <track kind="captions" />
+          </video>
+        </Col>
+        <Col style={{ marginTop: 600, background: "rgba(0,0,0,0.4" }}>
+          <h4 className="fs-1 text-white">Behind The Scenes</h4>
+          <h5 className="fs-3 text-white">See Pocket CInema Garduates in action.</h5>
+          <Button variant="light">Watch</Button>
+        </Col>
+      </Row>
       <Row>
         <Col xs={{ span: 8, offset: 2 }} className="py-5 text-secondary">
           <h2 className="mb-3 s-2 fw-light text-info text-uppercase">Pocket Cinema</h2>
@@ -111,37 +132,3 @@ const PocketCinema = () => {
 }
 
 export default PocketCinema
-
-/*
-Pocket Cinema is for students  with no previous experience, who want to train their eyes to see more creatively and apply their knowledge to creating videos to tell their stories, document their work, promote their business and express their ideas.
-
-To participate to the training you will need the following:
-
-  1. Smartphone Android or iPhone
-  2. Earphone with microphone
-  3. Access to WI-FI
-  4. Selfie stick or tripod, lens, lights,external hardrive, computer (optional)
-
-This training has two components: one is technical and the other theoretical. You will learn the basics of filmmaking, how to tell your own story and develop your own unique style. This course is tailored for you. Please make sure to prepare your questions beforehand.
-
-The hands-on portion of this training will focus on experimenting with basic techniques of sound, lights, camera and action. You will learn how to become resourceful with the powerful tool you have in your pocket and transform it into a professional movie camera to tell your original stories.
-
-At the end of the course, 75 SHOTS  will produce a  5 minute short video, which you will receive full credit  as Writer, Director & Cinematographer. 
- 
-
-Classes Include
-     
-    * Technical specification of the phone
-    
-    * Filming techniques & genres 
-    
-    * Lighting techniques
-    
-    * Audio techniques
-    
-    * Different gear available 
-    
-    * DIY studios 
-    
-    * Writing and recording voice overs
-*/

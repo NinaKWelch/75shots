@@ -1,3 +1,4 @@
+import React, { useEffect } from "react"
 import Row from "react-bootstrap/Row"
 import TemplatePage from "../TemplatePage"
 import TemplatePageTeaser from "../TemplatePageTeaser"
@@ -7,6 +8,11 @@ import TrainingAside from "./TrainingAside"
 import TrainingPocketCinema from "./TrainingPocketCinema"
 
 const Training = () => {
+  // scroll to top of page
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <TemplatePage
       titleImage="https://res.cloudinary.com/pocketcinema/image/upload/v1629135980/20190809_200552_wtgdpw.jpg"

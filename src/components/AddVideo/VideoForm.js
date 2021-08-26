@@ -43,8 +43,8 @@ const videoSchema = Yup.object().shape({
 const VideoForm = ({
   /*countries,
   languages,
-  contentTypes,
-  categories,*/
+  contentTypes,*/
+  categories,
   handleCreateVideo,
 }) => {
   return (
@@ -60,8 +60,8 @@ const VideoForm = ({
         //language: languages[0],
         //contentType: contentTypes[0],
         //length: 0,
-        //categories: categories,
-        //pricePerView: 0,
+        categories: categories,
+        pricePerView: 0,
         //tags: "",
         //crew: [{ position: "", name: "" }],
         //cast: [{ role: "", name: "" }],
@@ -69,9 +69,11 @@ const VideoForm = ({
       validationSchema={videoSchema}
       onSubmit={(values) => {
         const newVideo = {
+          imgUrl: values.imgUrl,
           title: values.title,
           director: values.director,
           description: values.description,
+          pricePerView: values.pricePerView,
         }
         handleCreateVideo(newVideo)
       }}
@@ -83,7 +85,7 @@ const VideoForm = ({
               //countries={countries}
               //languages={languages}
               //contentTypes={contentTypes}
-              //values={values}
+              values={values}
               touched={touched}
               errors={errors}
               setFieldValue={setFieldValue}

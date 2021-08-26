@@ -13,7 +13,17 @@
     },
     "categories": {
       "auth": {
-        "75shotsdd87ba75": {}
+        "75shots3f215b31": {}
+      },
+      "function": {
+        "createOrder": {
+          "deploymentBucketName": "amplify-amplify263b72b42e8d4-staging-64710-deployment",
+          "s3Key": "amplify-builds/createOrder-2f39435341634c2b336a-build.zip"
+        },
+        "processPayment": {
+          "deploymentBucketName": "amplify-amplify263b72b42e8d4-staging-64710-deployment",
+          "s3Key": "amplify-builds/processPayment-4261472f6365586f766a-build.zip"
+        }
       }
     }
   }

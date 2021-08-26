@@ -21,7 +21,13 @@ const TemplatePageSectionTrainingA = ({
         <h5 className="mb-4 fs-6 text-primary fw-light text-uppercase">Training</h5>
         <h4 className="mb-4 fs-2 fw-lighter text-uppercase">{title}</h4>
         <div className="mb-4">{children}</div>
-        <Button as={Link} to={btnLink} variant="primary" size="lg">
+        <Button
+          as={Link}
+          to={btnLink}
+          variant="primary"
+          size="lg"
+          className="rounded-pill"
+        >
           {btnText}
         </Button>
       </Col>

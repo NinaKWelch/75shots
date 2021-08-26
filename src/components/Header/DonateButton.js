@@ -3,7 +3,13 @@ import Button from "react-bootstrap/Button"
 
 const DonateButton = () => {
   return (
-    <Button as={Link} to="/donate" variant="primary" size="lg">
+    <Button
+      as={Link}
+      to="/donate"
+      variant="outline-primary"
+      size="lg"
+      className="rounded-pill"
+    >
       Donate
     </Button>
   )

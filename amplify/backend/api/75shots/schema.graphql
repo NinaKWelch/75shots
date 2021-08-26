@@ -1,0 +1,95 @@
+type Category @model {
+  id: ID!
+  label: String
+  value: Boolean
+}
+
+type Video
+  @model(subscriptions: null)
+  @auth(
+    rules: [
+      # allow admins to create, update and delete videos
+      { allow: groups, groups: ["Admin"] }
+      # allow all authenticated users to view videos
+      { allow: private, operations: [read] }
+      # allow all guest users (not authenticated) to view videos
+      { allow: public, operations: [read] }
+    ]
+  )
+{
+  id: ID!
+  imgUrl: String!
+  title: String!
+  director: String!
+  description: String!
+  categories: [Category]
+  pricePerView: Float
+  orders: [VideoOrder] @connection(keyName: "byVideo", fields: ["id"])
+}
+
+type VideoOrder
+  @model(queries: null, subscriptions: null)
+  @key(name: "byVideo", fields: ["video_id", "order_id"])
+  @key(name: "byOrder", fields: ["order_id", "video_id"])
+  @auth(
+    rules: [
+      # allow admins to create videoorders by using customer email in lambda
+      { allow: owner, identityClaim: "email", ownerField: "customer"}
+      { allow: groups, groups: ["Admin"] }
+    ]
+  )
+{
+  id: ID!
+  video_id: ID!
+  order_id: ID!
+  video: Video @connection(fields: ["video_id"])
+  order: Order @connection(fields: ["order_id"])
+}
+
+type Order
+  @model(subscriptions: null)
+  @auth(
+    rules: [
+      # only owner can see their orders
+      { allow: owner, identityClaim: "email", ownerField: "customer" }
+      # allow admins to view orders
+      { allow: groups, groups: ["Admin"] }
+    ]
+  )
+  @key(name: "byUser", fields: ["user"])
+{
+  id: ID!
+  user: String!
+  date: String
+  total: Float
+  videos: [VideoOrder] @connection(keyName: "byOrder", fields: ["id"])
+}
+
+enum OrderStatus {
+  SUCCESS
+  FAILED
+}
+
+input CartItem {
+  id: ID!
+  title: String
+  director: String
+  price: Float
+  amount: Int
+}
+
+input ProcessOrderInput {
+  id: ID!
+  cart: [CartItem]
+  total: Float!
+  token: String!
+  address: String
+}
+
+type Mutation {
+  processOrder(input: ProcessOrderInput!): OrderStatus
+    @function(name: "processPayment-${env}")
+    @function(name: "createOrder-${env}")
+}
+
+

@@ -9,6 +9,11 @@ import ProductionList from "./ProductionList"
 const Productions = () => {
   const [videos, setVideos] = useState([])
 
+  // scroll to top of page
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   useEffect(() => {
     const getData = async () => {
       try {
