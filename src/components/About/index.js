@@ -5,8 +5,9 @@ import TemplatePageTeaser from "../TemplatePageTeaser"
 import TemplatePageIntro from "../TemplatePageIntro"
 import AboutStory from "./AboutStory"
 import AboutFounder from "./AboutFounder"
-import AboutCommunity from "./AboutCommunity"
-import AboutProgram from "./AboutProgram"
+//import AboutCommunity from "./AboutCommunity"
+//import AboutProgram from "./AboutProgram"
+import AboutVideo from "./AboutVideo"
 
 const About = () => {
   // scroll to top of page
@@ -44,8 +45,9 @@ const About = () => {
       </Row>
       <AboutStory />
       <AboutFounder />
-      <AboutCommunity />
-      <AboutProgram />
+      {/*<AboutCommunity />
+      <AboutProgram />*/}
+      <AboutVideo />
     </TemplatePage>
   )
 }

@@ -13,7 +13,7 @@ const TemplatePageSectionTrainingA = ({
   children,
 }) => {
   return (
-    <Row className="align-items-center">
+    <Row className="py-5 align-items-center">
       <Col xs={{ span: 10, offset: 1 }} md={{ span: 5, offset: 1 }}>
         <Image src={imgLink} fluid alt={imgAlt} />
       </Col>

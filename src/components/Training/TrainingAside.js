@@ -3,7 +3,7 @@ import Col from "react-bootstrap/Col"
 
 const TrainingAside = () => {
   return (
-    <Row className="py-5">
+    <Row className="bg-light py-5">
       <Col
         xs={{ span: 10, offset: 1 }}
         md={{ span: 6, offset: 3 }}

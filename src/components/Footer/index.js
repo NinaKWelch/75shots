@@ -2,7 +2,7 @@ import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Button from "react-bootstrap/Button"
-import { ArrowRight, Facebook, Instagram, Linkedin } from "react-bootstrap-icons"
+import { ArrowRight, Facebook, Instagram, Linkedin, Youtube } from "react-bootstrap-icons"
 // import FormNewsletterSignUp from "../FormNewsletterSignUp"
 import Logo from "../Logo"
 
@@ -46,6 +46,9 @@ const Footer = () => {
               </Button>
               <Button variant="Link">
                 <Linkedin color="white" size={36} />
+              </Button>
+              <Button variant="Link">
+                <Youtube color="white" size={36} />
               </Button>
             </Col>
           </Row>

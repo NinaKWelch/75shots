@@ -5,7 +5,7 @@ const AboutStory = () => (
     title="Our Story"
     imgLink="https://via.placeholder.com/600x600.png"
     imgAlt="photo"
-    btnText="Learn About Gay Rights"
+    btnText="Read More"
     btnLink="/about"
   >
     <p>

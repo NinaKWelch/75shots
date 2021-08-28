@@ -5,7 +5,7 @@ const AboutFounder = () => (
     title="Our Founder"
     imgLink="https://via.placeholder.com/600x600.png"
     imgAlt="photo"
-    btnText="Meet Karin"
+    btnText="Read More"
     btnLink="/about"
   >
     <p>

@@ -1,15 +1,15 @@
-const { v4: uuidv4 } = require("uuid");
-const AWS = require("aws-sdk");
-const documentClient = new AWS.DynamoDB.DocumentClient();
+const { v4: uuidv4 } = require("uuid")
+const AWS = require("aws-sdk")
+const documentClient = new AWS.DynamoDB.DocumentClient()
 
 // ORDER_TABLE and VIDEO_ORDER_TABLE ids are found at Amplify UI API section
-const ORDER_TABLE = "Order-6tne7pva45hcpcqswxr5x6lcva-staging";
-const ORDER_TYPE = "Order";
-const VIDEO_ORDER_TABLE = "VideoOrder-6tne7pva45hcpcqswxr5x6lcva-staging";
-const VIDEO_ORDER_TYPE = "VideoOrder";
+const ORDER_TABLE = "Order-6tne7pva45hcpcqswxr5x6lcva-staging"
+const ORDER_TYPE = "Order"
+const VIDEO_ORDER_TABLE = "VideoOrder-6tne7pva45hcpcqswxr5x6lcva-staging"
+const VIDEO_ORDER_TYPE = "VideoOrder"
 
 const createOrder = async (payload) => {
-  const { order_id, username, email, total } = payload;
+  const { order_id, username, email, total } = payload
   var params = {
     TableName: ORDER_TABLE,
     Item: {
@@ -19,17 +19,17 @@ const createOrder = async (payload) => {
       user: username,
       total: total,
       updatedAt: new Date().toISOString(),
-      createdAt: new Date().toISOString()
-    }
-  };
-  console.log(params);
-  await documentClient.put(params).promise();
-};
+      createdAt: new Date().toISOString(),
+    },
+  }
+  console.log(params)
+  await documentClient.put(params).promise()
+}
 
 const createVideoOrder = async (payload) => {
-  let videoOrders = [];
+  let videoOrders = []
   for (i = 0; i < payload.cart.length; i++) {
-    const cartItem = payload.cart[i];
+    const cartItem = payload.cart[i]
     videoOrders.push({
       PutRequest: {
         Item: {
@@ -39,18 +39,18 @@ const createVideoOrder = async (payload) => {
           order_id: payload.order_id,
           customer: payload.email,
           createdAt: new Date().toISOString(),
-          updatedAt: new Date().toISOString()
-        }
-      }
-    });
+          updatedAt: new Date().toISOString(),
+        },
+      },
+    })
   }
   let params = {
-    RequestItems: {}
-  };
-  params["RequestItems"][VIDEO_ORDER_TABLE] = videoOrders;
-  console.log(params);
-  await documentClient.batchWrite(params).promise();
-};
+    RequestItems: {},
+  }
+  params["RequestItems"][VIDEO_ORDER_TABLE] = videoOrders
+  console.log(params)
+  await documentClient.batchWrite(params).promise()
+}
 
 /*
  * Get order details from processPayment lambda
@@ -60,23 +60,23 @@ const createVideoOrder = async (payload) => {
  */
 exports.handler = async (event) => {
   try {
-    let payload = event.prev.result;
-    payload.order_id = uuidv4();
+    let payload = event.prev.result
+    payload.order_id = uuidv4()
 
     // create a new order
-    await createOrder(payload);
+    await createOrder(payload)
 
     // links books with the order
-    await createBookOrder(payload);
+    await createBookOrder(payload)
 
     // Note - You may add another function to email the invoice to the user
 
-    return "SUCCESS";
+    return "SUCCESS"
   } catch (err) {
-    console.log(err);
-    return new Error(err);
+    console.log(err)
+    return new Error(err)
   }
-};
+}
 
 /*
 exports.handler = async (event) => {

@@ -3,9 +3,10 @@ import Row from "react-bootstrap/Row"
 import TemplatePage from "../TemplatePage"
 import TemplatePageTeaser from "../TemplatePageTeaser"
 import TemplatePageIntro from "../TemplatePageIntro"
-import TrainingGraduates from "./TrainingGraduates"
+//import TrainingGraduates from "./TrainingGraduates"
 import TrainingAside from "./TrainingAside"
 import TrainingPocketCinema from "./TrainingPocketCinema"
+import TrainingQuote from "./TrainingQuote"
 
 const Training = () => {
   // scroll to top of page
@@ -49,9 +50,10 @@ const Training = () => {
           </ul>
         </TemplatePageIntro>
       </Row>
-      <TrainingGraduates />
+      {/*<TrainingGraduates />*/}
       <TrainingAside />
       <TrainingPocketCinema />
+      <TrainingQuote />
     </TemplatePage>
   )
 }

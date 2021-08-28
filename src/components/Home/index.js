@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container"
 import MissionSection from "./MissionSection"
 import QuoteSection from "./QuoteSection"
 import TrainingSection from "./TrainingSection"
+import AboutVideo from "../About/AboutVideo"
 
 const Home = () => {
   // scroll to top of page
@@ -15,6 +16,7 @@ const Home = () => {
       <MissionSection />
       <QuoteSection />
       <TrainingSection />
+      <AboutVideo />
     </Container>
   )
 }
